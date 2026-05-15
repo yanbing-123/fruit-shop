@@ -212,6 +212,19 @@
     saveStock();
 
     const orderNo = 'FR' + Date.now();
+    // Notify order persistence hook
+    if (window._fruit._onOrderCreated) {
+      window._fruit._onOrderCreated(
+        orderNo,
+        lastOrderSnapshot,
+        getCartTotal(),
+        {
+          name: document.getElementById('userName').value.trim(),
+          phone: document.getElementById('userPhone').value.trim(),
+          address: document.getElementById('userAddress').value.trim(),
+        }
+      );
+    }
     cartData = []; saveCart();
 
     closeCheckout(); updateCartBadge(); updateCartSidebar(); renderProducts();
@@ -264,7 +277,7 @@
   }
 
   // ===== 暴露关键函数到 window =====
-  window._fruit = { addToCart, updateQuantity, removeFromCart, clearCart, toggleCart, openCheckout, closeCheckout, submitOrder, closeSuccess };
+  window._fruit = { addToCart, updateQuantity, removeFromCart, clearCart, toggleCart, openCheckout, closeCheckout, submitOrder, closeSuccess, renderProducts, PRODUCTS, getStock: () => stockData, showToast };
 
   init();
 

@@ -1,0 +1,223 @@
+/* ===== Order List Modal ===== */
+.order-list-modal .modal-header {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: #fff;
+  margin: -28px -24px 0;
+  padding: 18px 24px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.order-list-modal .modal-header h3 { color: #fff; }
+.order-list-modal .modal-header .modal-close { color: rgba(255,255,255,0.7); }
+.order-list-modal .modal-header .modal-close:hover { color: #fff; }
+
+.order-list-content {
+  max-height: 60vh;
+  overflow-y: auto;
+  margin: 0 -24px;
+  padding: 0 24px;
+}
+
+.order-empty {
+  text-align: center;
+  color: var(--text-light);
+  padding: 50px 20px;
+  font-size: 0.95rem;
+}
+
+/* Order Card */
+.order-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  background: #fafafa;
+}
+.order-card:hover {
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+
+.order-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.order-card-id {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--text);
+  letter-spacing: 0.5px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Order Status Labels */
+.order-card-status {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+.status-ordered {
+  background: #fff3e0;
+  color: #e65100;
+}
+.status-shipping {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+.status-completed {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.order-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.order-card-items {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+.order-card-total {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+}
+.order-card-footer {
+  font-size: 0.75rem;
+  color: #b2bec3;
+}
+
+/* ===== Order Detail Modal ===== */
+.order-detail-modal .modal-header {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: #fff;
+  margin: -28px -24px 0;
+  padding: 18px 24px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.order-detail-modal .modal-header h3 { color: #fff; }
+.order-detail-modal .modal-header .modal-close { color: rgba(255,255,255,0.7); }
+.order-detail-modal .modal-header .modal-close:hover { color: #fff; }
+
+.order-detail-content {
+  padding-top: 4px;
+}
+
+.od-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.od-id {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+.od-time {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 18px;
+}
+
+/* Order detail table */
+.od-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
+}
+.od-table th {
+  background: #f0fdf4;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+.od-table th:last-child,
+.od-table td:last-child {
+  text-align: right;
+}
+.od-table td {
+  padding: 10px 10px;
+  border-bottom: 1px solid #f0fdf4;
+}
+.od-table .td-price {
+  font-weight: 700;
+  color: var(--primary);
+  text-align: right;
+}
+.od-table .td-label {
+  text-align: right;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Shipping info */
+.od-shipping {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+.od-ship-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 0.88rem;
+}
+
+/* Reorder button */
+.btn-reorder {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-reorder:hover {
+  background: var(--primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .order-list-modal,
+  .order-detail-modal {
+    width: 95vw;
+    padding: 20px 16px;
+  }
+  .order-list-modal .modal-header,
+  .order-detail-modal .modal-header {
+    margin: -20px -16px 0;
+    padding: 14px 16px;
+  }
+  .order-list-content {
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
+  .od-table { font-size: 0.82rem; }
+  .od-table th,
+  .od-table td { padding: 6px 6px; }
+}
